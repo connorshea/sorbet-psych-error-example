@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An example for this issue: https://github.com/sorbet/sorbet/issues/3125
 
-Things you may want to cover:
+To reproduce the issue, just clone this repo, run `bundle install`, and then `bundle exec srb init`.
 
-* Ruby version
+I used Ruby 2.6.5, but it probably fails on most other versions as well. (You'll need Ruby 2.5+ for Rails 6 to work)
 
-* System dependencies
+The repo was created with the following commands:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `rails new sorbet-psych-error-example --skip-action-cable --skip-active-storage --skip-action-text --skip-action-mailbox`
+  - Disables a few extra features just because they're not relevant to the issue.
+- `cd sorbet-psych-error-example/`
+- `bundle add sorbet`
